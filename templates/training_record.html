@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Company Login page - Title page -->
+        <title>Completed - Trainings</title>
+        <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+      </head>
+      <style>
+        th  {
+            background-color: #4ca1af; 
+            color: white;
+        }
+      </style>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="w3-bar_w3-black">
+        <a href="{{ url_for('home') }}" class="home" ><font style="font-family:Optima">Home</font></a>
+        <a href="{{ url_for('training_programs') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">Training Programs</font></a>
+        </nav>
+        
+        <center>
+        <h3><i>The following are the Completed trainings by the Employees</i></h3>
+        <table border="2" color="" id="training">
+            <tr>
+                <th class="course">COURSE ID</th>
+                <th>CREDIT HOURS</th>
+                <th>TRAINING ID</th>
+                <th>COURSE NAME</th>
+            </tr>
+            {% for training in trainingCompletedDetails %}
+            <tr>
+                <td>{{training[0]}}</td>
+                <td>{{training[1]}}</td>
+                <td>{{training[2]}}</td>
+                <td>{{training[3]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+        <form action="" method="POST">
+
+        </form>
+    
+    </body>
+</html>

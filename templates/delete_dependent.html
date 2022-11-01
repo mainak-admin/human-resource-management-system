@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/w3css/3/w3.css">
+	
+	<head>
+	  <!-- Company Login page - Title page -->
+	  <title>Humanetics Delete Dependent</title>
+	  <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	
+	  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	  <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+	</head>
+	
+</head>
+<body>
+	<nav>		  
+	</nav>
+	<section>
+		<form method="POST" action="">
+			<fieldset>
+				<legend><b><font size=5>Delete Dependent Details</b></font></legend>
+				<br>
+				<label><b>DEPENDENT ID</b></label><input type ="text" id="dependent_id" name="dependent_id" autofocus/>
+				<label><b>FIRST NAME</b></label><input type="text" id="dependent_firstName" name="first_name"/>
+				<br>
+				<br>
+				<a href="{{ url_for('dependent_view') }}"><button class="deleteBtn"><b>Delete</b></button></a>
+			</fieldset>
+		</form>			
+	</section>	
+</body>
+</html>

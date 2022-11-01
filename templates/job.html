@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Job Details Page -->
+        <title>Humanetics - Job</title>
+        <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+      </head>
+      <style>
+        th  {
+            background-color: #4ca1af; 
+            color: white;
+        }
+      </style>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="w3-bar_w3-black">
+            <a href="{{ url_for('employee_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">EMPLOYEE</a>
+            <a href="{{ url_for('dependent_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">DEPENDENTS</a>
+            <a href="{{ url_for('job_details') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">JOB</a>
+            <a href="{{ url_for('performance_ratings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">PERFORMANCE AND RATINGS</a>
+            <a href="{{ url_for('training_programs') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">SKILL DEVELOPMENT</font></a>
+        </nav>
+        
+        <center>
+        <h3><i>Job details and salary</i></h3>
+        <table border="2" color="" id="job">
+            <tr>
+                <th>JOB ID</th>
+                <th>DEPARTMENT ID</th>
+                <th>JOB TITLE</th>
+                <th>MINIMUM SALARY</th>
+                <th>MAXIMUM SALARY</th>
+                
+            </tr>
+            {% for job in jobDisplayDetails %}
+            <tr>
+                <td>{{job[0]}}</td>
+                <td>{{job[1]}}</td>
+                <td>{{job[2]}}</td>
+                <td>{{job[3]}}</td>
+                <td>{{job[4]}}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+        <form action="" method="POST">
+
+        </form>
+    <nav class="w3-bar_w3-black">
+     <div>
+        <center>
+        <label for="update_job" class="w3-bar_w3-black">Do you want to perform any of the following operations on Employee job details ?
+            <br>
+            <br>
+            <br>
+            <a href="{{ url_for('update_jobTitle') }}" class="w3-bar_w3-black"><button class="AddBtn"><b>Update Job Title </button></a>
+            <a href="{{ url_for('update_jobSalary') }}" class="w3-bar_w3-black"><button class="AddBtn"><b>Update Salary</button></a>   
+        </label>    
+        </div>  
+    </nav>
+    </body>
+</html>

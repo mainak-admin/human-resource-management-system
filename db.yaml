@@ -1,0 +1,4 @@
+mysql_host: 'localhost'
+mysql_user: 'root'
+mysql_password: 'root@3798'
+mysql_db: 'hrmsdb'

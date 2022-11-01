@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Dependent List Page -->
+        <title>Humanetics - Dependent</title>
+        <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+      </head>
+      <style>
+        th  {
+            background-color: #4ca1af; 
+            color: white;
+        }
+      </style>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="w3-bar_w3-black">
+            <a href="{{ url_for('employee_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">EMPLOYEE</a>
+            <a href="{{ url_for('dependent_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">DEPENDENTS</a>
+            <a href="{{ url_for('job_details') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">JOB</a>
+            <a href="{{ url_for('performance_ratings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">PERFORMANCE AND RATINGS</a>
+            <a href="{{ url_for('training_programs') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">SKILL DEVELOPMENT</font></a>
+        </nav>
+        
+        <center>
+        <h3><i>List Of Dependents</i></h3>
+        <table border="2" color="" id="dependent">
+            <tr>
+                <th class="dependent">DEPENDENT_ID</th>
+                <th>EMPLOYEE_ID</th>
+                <th>FIRST_NAME</th>
+                <th>LAST_NAME</th>
+                <th>RELATION</th>
+                <th>DATE OF BIRTH</th>
+                <th>PHONE_NUMBER</th>
+                <th>EMAIL</th>
+                <th>HOUSE NO.</th>
+                <th>ADDRESS LINE</th>
+                <th>AREA</th>
+                <th>CITY</th>
+                <th>STATE</th>
+                <th>PINCODE</th>
+                <th>COUNTRY</th>
+            </tr>
+            {% for dependent in dependentViewDetails %}
+            <tr>
+                <td>{{dependent[0]}}</td>
+                <td>{{dependent[1]}}</td>
+                <td>{{dependent[2]}}</td>
+                <td>{{dependent[3]}}</td>
+                <td>{{dependent[4]}}</td>
+                <td>{{dependent[5]}}</td>
+                <td>{{dependent[6]}}</td>
+                <td>{{dependent[7]}}</td>
+                <td>{{dependent[8]}}</td>
+                <td>{{dependent[9]}}</td>
+                <td>{{dependent[10]}}</td>
+                <td>{{dependent[11]}}</td>
+                <td>{{dependent[12]}}</td>
+                <td>{{dependent[13]}}</td>
+                <td>{{dependent[14]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+        <form action="" method="POST">
+
+        </form>
+    
+    </body>
+</html>

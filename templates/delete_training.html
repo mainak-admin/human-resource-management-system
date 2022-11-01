@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/w3css/3/w3.css">
+	
+	<head>
+	  <!-- Company Login page - Title page -->
+	  <title>Humanetics Home Page</title>
+	  <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	
+	  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	  <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+	</head>
+	
+</head>
+<body>
+	<nav class="w3-bar_w3-black">
+		<a href="{{ url_for('home') }}" class="home" ><font style="font-family:Optima">Home</font></a>
+		<a href="{{ url_for('course_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">List of Courses</font></a>
+		<a href="{{ url_for('completed_trainings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">Completed Trainings</font></a>
+		</nav>
+	<section>
+		<div class="form">
+		<form method="POST" action="">
+			<fieldset>
+				<legend><font size=5><b>Delete a Training Record</b></font></legend>
+				<br>
+				<b>TRAINING_ID ID</b><input type ="text" id="training_id" name="training_id" autofocus/>
+			<br>
+			<b>EMP_ID</b>	<input type="text" id="emp_id" name="emp_id"/>
+			<br>
+			<center>
+				<a href="{{ url_for('completed_trainings') }}"><button class="loginBtn"><b>Delete</b></a>
+			</center>
+		</fieldset>
+		</form>
+		</div>			
+	</section>	
+</body>
+</html>

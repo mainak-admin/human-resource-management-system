@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Employee List Page -->
+        <title>Humanetics - Employee</title>
+        <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+      </head>
+      <style>
+        th  {
+            background-color: #4ca1af; 
+            color: white;
+        }
+      </style>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="w3-bar_w3-black">
+            <a href="{{ url_for('employee_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">EMPLOYEE</a>
+            <a href="{{ url_for('dependent_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">DEPENDENTS</a>
+            <a href="{{ url_for('job_details') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">JOB</a>
+            <a href="{{ url_for('performance_ratings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">PERFORMANCE AND RATINGS</a>
+            <a href="{{ url_for('training_programs') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">SKILL DEVELOPMENT</font></a>
+        </nav>
+        
+        <center>
+        <h3><i>List Of Employees</i></h3>
+        <table border="2" color="" id="employee">
+            <tr>
+                <th class="employee">EMPLOYEE_ID</th>
+                <th>FIRST_NAME</th>
+                <th>LAST_NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE_NUMBER</th>
+                <th>DEPARTMENT_ID</th>
+                <th>JOB_ID</th>
+                <th>MANAGER_ID</th>
+                <th>DATE_OF_JOINING</th>
+            </tr>
+            {% for employee in employeeSelectDetails %}
+            <tr>
+                <td>{{employee[0]}}</td>
+                <td>{{employee[1]}}</td>
+                <td>{{employee[2]}}</td>
+                <td>{{employee[3]}}</td>
+                <td>{{employee[4]}}</td>
+                <td>{{employee[5]}}</td>
+                <td>{{employee[6]}}</td>
+                <td>{{employee[7]}}</td>
+                <td>{{employee[8]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+        <form action="" method="POST">
+
+        </form>
+    <nav class="w3-bar_w3-black">
+     <div>
+            <label for="update_employee" class="w3-bar_w3-black">Do you want to perform any of the following operations on Employee ?
+            <br>
+            <br>
+            <center>
+            <a href="{{ url_for('update_employee') }}" class="w3-bar_w3-black"><button class="AddBtn"><b>Update Employee </button></a>
+            <a href="{{ url_for('insert_employee') }}" class="w3-bar_w3-black"><button class="AddBtn"><b>Insert Employee </button></a>
+            <a href="{{ url_for('delete_employee') }}" class="w3-bar_w3-black"><button class="AddBtn"><b>Delete Employee</button></a>   
+        </label>    
+        </div>  
+    </nav>
+    </body>
+</html>

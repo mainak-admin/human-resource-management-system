@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/w3css/3/w3.css">
+
+<head>
+  <!-- Company Login page - Title page -->
+  <title>Humanetics Home Page</title>
+  <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="w3-bar_w3-black">
+    <a href="{{ url_for('home') }}" class="home" ><font style="font-family:Optima">Home</font></a>
+    <a href="{{ url_for('course_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">Courses</font></a>
+    <a href="{{ url_for('completed_trainings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">EC Trainings</font></a>
+    <a href="{{ url_for('employee_trainings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">Trainings</font></a>
+    </nav>
+    <br>
+    <br>
+    <p><i><font size="5" color="blue">Employee training and development programs are essential to the success of the businesses. Not only do these programs offer opportunities for staff to improve their skills, but also for organization to enhance employee productivity and improve company culture. Employees who take part in effective training and development programs work more efficiently.So, training and development is boost employee productivity.</font></i></p>
+
+</body>
+</html>

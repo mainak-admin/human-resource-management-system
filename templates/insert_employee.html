@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/w3css/3/w3.css">
+	
+	<head>
+	  <!-- Company Login page - Title page -->
+	  <title>Humanetics Insert Employee</title>
+	  <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	
+	  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	  <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+	</head>
+	
+</head>
+<body>
+	<nav class="w3-bar_w3-black">
+		<a href="{{ url_for('home') }}" class="home" ><font style="font-family:Optima">Home</font></a>		  
+	</nav>
+	<section>
+		<div class="container">
+		<form method="POST" action="">
+			<fieldset>
+				<legend><b><font size=5>Add new employee details</b></font></legend>
+				<br>
+				<label><b>EMPLOYEE ID</b></label><input type ="text" id="employee_id" name="employee_id" autofocus/>
+				<label><b>FIRST NAME</b></label><input type="text" id="employee_firstName" name="first_name"/>
+				<label><b>LAST NAME</b></label><input type="text" id="employee_lastName" name="last_name"/>
+				<label><b>DEPARTMENT ID</b></label><input type="text" id="employee_department" name="department_id" autofocus/>
+				<label><b>JOB ID</b></label><input type ="text" id="job_id" name="job_id"/>
+				<label><b>MANAGER_ID</b></label><input type="text" id="employee_managerID" name="manager_id"/>
+				<label><b>DATE OF JOINING</b></label><input type="text" id="employee_doj" name="date_of_joining"/>
+				<br>
+				<br>
+				<a href="{{ url_for('employee_list') }}"><button class="insertBtn"><b>Insert</b></button></a>
+			
+			</fieldset>
+		</form>
+		</div>			
+	</section>	
+</body>
+</html>

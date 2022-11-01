@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/w3css/3/w3.css">
+	
+	<head>
+	  <!-- Company Login page - Title page -->
+	  <title>Humanetics Home Page</title>
+	  <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	
+	  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	  <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+</head>
+	
+</head>
+<body>
+	<nav class="w3-bar_w3-black">
+		<a href="{{ url_for('home') }}" class="home" ><font style="font-family:Optima">Home</font></a>
+		<a href="{{ url_for('course_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">List of Courses</font></a>
+		<a href="{{ url_for('completed_trainings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">Completed Trainings</font></a>
+		</nav>
+	<section>
+		<div class="container">
+		<form method="POST" action="">
+			<fieldset>
+				<legend><b><font size=5>Update a Training Record</b></font></legend>
+				<br>
+				<label><b>TRAINING_ID</b></label><input type ="text" id="training_id" name="training_id" autofocus/>
+				<label><b>EMP ID</b></label><input type="text" id="emp_id" name="emp_id" />
+				<label><b>PLATFORM </b></label><input type="text" id="platform" name="platform"/>
+				<label><b>DATE</b></label><input type ="date" id="doc" name="doc" placeholder="YYYY-MM-DD" required pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])/(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])/(?:30))|(?:(?:0\[13578\]|1\[02\])-31))"/>
+				<br>
+				<br>
+				<a href="{{ url_for('update_training') }}"><button class="loginBtn"><b>Update</b></button></a>
+			</fieldset>
+		</form>
+		</div>			
+	</section>
+</body>
+</html>

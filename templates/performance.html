@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Performance Ratings Page -->
+        <title>Humanetics - Performance and Ratings</title>
+        <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+      </head>
+      <style>
+        th  {
+            background-color: #4ca1af; 
+            color: white;
+        }
+      </style>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="w3-bar_w3-black">
+            <a href="{{ url_for('employee_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">EMPLOYEE</a>
+            <a href="{{ url_for('dependent_list') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">DEPENDENTS</a>
+            <a href="{{ url_for('job_details') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">JOB</a>
+            <a href="{{ url_for('performance_ratings') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">PERFORMANCE AND RATINGS</a>
+            <a href="{{ url_for('training_programs') }}" class="w3-button w3-bar-item"><font style="font-family:Optima">SKILL DEVELOPMENT</font></a>
+        
+        <center>
+        <h3><i>Welcome to 2022 Performance and Ratings</i></h3>
+        <h4><i> Introductory Performance Review</i></h4>
+        <table border="2" color="" id="performance_rating">
+            <tr>
+                <th class="performance_rating">SESSION_ID</th>
+                <th>MANAGER_ID</th>
+                <th>EMPLOYEE_ID</th>
+                <th>DATE OF REVIEW</th>
+                <th>COMMENTS</th>
+                <th>REVIEW</th>
+                
+            </tr>
+            {% for rating in ratingSelectDetails %}
+            <tr>
+                <td>{{rating[0]}}</td>
+                <td>{{rating[1]}}</td>
+                <td>{{rating[2]}}</td>
+                <td>{{rating[3]}}</td>
+                <td>{{rating[4]}}</td>
+                <td>{{rating[5]}}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+        <form action="" method="POST">
+
+        </form>
+    
+    </body>
+</html>

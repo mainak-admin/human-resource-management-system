@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/w3css/3/w3.css">
+	
+	<head>
+	  <!-- Company Login page - Title page -->
+	  <title>Humanetics Delete Employee</title>
+	  <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	
+	  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	  <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+	</head>
+	
+</head>
+<body>
+	<nav class="w3-bar_w3-black">
+		<a href="{{ url_for('home') }}" class="home" ><font style="font-family:Optima">Home</font></a>		  
+	</nav>
+	<section>
+		<div class="container">
+		<form method="POST" action="">
+			<fieldset>
+				<legend><b><font size=5>Delete existing employee details</b></font></legend>
+				<br>
+				<label><b>EMPLOYEE ID</b></label><input type ="text" id="employee_id" name="employee_id" autofocus/>
+                <label><b>FIRST NAME</b></label><input type="text" id="employee_firstName" name="first_name"/>
+                <br>
+				<a href="{{ url_for('employee_list') }}"><button class="updateBtn"><b>Delete</b></button></a>
+			
+			</fieldset>
+		</form>
+		</div>			
+	</section>	
+</body>
+</html>
